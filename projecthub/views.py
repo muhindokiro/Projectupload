@@ -75,3 +75,8 @@ def convert_dates(dates):
     day = days[day_number]
     return day
   
+def contactme(request):
+    return render(request, 'contactme.html')
+
+def profile(request):
+    return render(request, 'profile.html')
