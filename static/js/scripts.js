@@ -8,9 +8,13 @@ $(document).ready(function() {
     $('.parent2').on('mousedown touchstart', function() {
 
         if (!active1) $(this).find('.test1').css({ 'background-color': 'gray', 'transform': 'translate(0px,125px)' });
+        else $(this);
         if (!active2) $(this).find('.test2').css({ 'background-color': 'gray', 'transform': 'translate(60px,105px)' });
+        else $(this);
         if (!active3) $(this).find('.test3').css({ 'background-color': 'gray', 'transform': 'translate(105px,60px)' });
+        else $(this);
         if (!active4) $(this).find('.test4').css({ 'background-color': 'gray', 'transform': 'translate(125px,0px)' });
+        else $(this);
         active1 = !active1;
         active2 = !active2;
         active3 = !active3;
