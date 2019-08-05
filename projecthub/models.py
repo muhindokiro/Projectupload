@@ -34,3 +34,18 @@ class Review(models.Model):
     def todays_projecthub(cls):
         projecthub = cls.objects.filter()
         return projecthub
+
+class Profile(models.Model):
+    profile_bio = models.CharField(max_length =60)
+    profile_contact = models.CharField(max_length =60)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    profile_image = models.ImageField(upload_to='profile/', blank=True)
+    
+
+    @classmethod
+    def todays_project(cls):
+        projecthub = cls.objects.filter()
+        return projecthub
+
+    def save_profile(self):
+        self.save()
