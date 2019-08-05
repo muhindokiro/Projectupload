@@ -42,7 +42,6 @@ class Profile(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     profile_image = models.ImageField(upload_to='profile/', blank=True)
     
-
     @classmethod
     def todays_project(cls):
         projecthub = cls.objects.filter()
