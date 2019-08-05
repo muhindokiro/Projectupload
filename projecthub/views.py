@@ -8,7 +8,6 @@ from .forms import NewProjectForm,NewsLetterForm,RegisterForm
 
 
 # Create your views here.
-
 # @login_required(login_url='/accounts/login/')
 def project_today(request):
     projecthub = Project.todays_project()
