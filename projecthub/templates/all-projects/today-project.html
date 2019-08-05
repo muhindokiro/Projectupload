@@ -3,14 +3,14 @@
 
 {% block content %}
 {{block.super}}
-{% comment %} <div class='container' style='margin-left: 20%'> {% endcomment %}
+<div class='container' style='margin-left: 20%'> 
 
   <!-- Looping through ig   -->
   {% for projecthub_item in projecthub %}
 <div class="container-fluid">
  <div class="row">
   <div class="">
-            <div class="card ml-4 mt-4" style="width: 40rem; height: 45rem;">
+            <div class="card ml-4 mt-4" style="width: 40rem; height: 48rem;">
                 <div>
                 <br>
                 <p style="font-size:18px; text-align:center;"><b>{{ projecthub_item.project_title }}</b></p>
@@ -29,7 +29,9 @@
           <p style="font-size:15px;"><b>{{ projecthub_item.project_details }}</b></p>
                 <p style="font-size:15px;"><b>Posted {{ projecthub_item.pub_date|timesince }} ago.</b></p>
                 <p style="font-size:15px;"><b>{{ projecthub_item.project_link }}</b></p>
-                {% comment %} <p>{{date|date:"l d-F Y"}}</p> {% endcomment %}
+                <p style="font-size:15px;"><b>{{ projecthub_item.project_review }}</b></p>
+                <button href="{%url 'new-review '%}" type="button" class="btn btn-dark">Review</button>
+                
                 </div>
           </div>
 

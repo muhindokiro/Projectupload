@@ -22,7 +22,7 @@ def project_today(request):
         form = NewsLetterForm()
     return render(request, 'all-projects/today-project.html', {"projecthub":projecthub,"letterForm":form})
 
-
+# @login_required(login_url='/accounts/login/')
 def search_results(request):
 
     if 'article' in request.GET and request.GET["article"]:
@@ -51,6 +51,7 @@ def new_project(request):
         form = NewProjectForm()
     return render(request, 'new_project.html', {"form": form})
 
+# @login_required(login_url='/accounts/login/')
 def new_review(request):
     current_user = request.user
     if request.method == 'POST':
