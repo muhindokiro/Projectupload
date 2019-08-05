@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect
 import datetime as dt
-from .models import Project
+from .models import Project,Review
 from .email import send_welcome_email
 from django.http  import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from .forms import NewProjectForm,NewsLetterForm,RegisterForm
+from .forms import NewProjectForm,NewsLetterForm,RegisterForm,NewReviewForm
 
 
 # Create views here.
@@ -50,6 +50,20 @@ def new_project(request):
     else:
         form = NewProjectForm()
     return render(request, 'new_project.html', {"form": form})
+
+def new_review(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewReviewForm(request.POST, request.FILES)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.editor = current_user
+            review.save()
+        return redirect('projectToday')
+
+    else:
+        form = NewReviewForm()
+    return render(request, 'new_review.html', {"form": form})
 
 def register(request):
    if request.method == "POST":
