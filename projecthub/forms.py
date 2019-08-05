@@ -1,5 +1,5 @@
 from django import forms
-from .models import Project
+from .models import Project,Review
 
 
 class NewsLetterForm(forms.Form):
@@ -9,6 +9,11 @@ class NewsLetterForm(forms.Form):
 class NewProjectForm(forms.ModelForm):
     class Meta:
         model = Project
+        exclude = ['pub_date']
+
+class NewReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
         exclude = ['pub_date']
         
 class RegisterForm(forms.Form):
