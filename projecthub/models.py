@@ -38,6 +38,7 @@ class Review(models.Model):
 class Profile(models.Model):
     profile_bio = models.CharField(max_length =60)
     profile_contact = models.CharField(max_length =60)
+    profile_location = models.CharField(max_length =60)
     pub_date = models.DateTimeField(auto_now_add=True)
     profile_image = models.ImageField(upload_to='profile/', blank=True)
     
