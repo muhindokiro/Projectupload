@@ -24,7 +24,6 @@ def project_today(request):
 
 # @login_required(login_url='/accounts/login/')
 def search_results(request):
-
     if 'article' in request.GET and request.GET["article"]:
         search_term = request.GET.get("article")
         searched_articles = Project.search_by_project_title(search_term)
@@ -43,7 +42,6 @@ def new_project(request):
         form = NewProjectForm(request.POST, request.FILES)
         if form.is_valid():
             project = form.save(commit=False)
-            project.editor = current_user
             project.save()
         return redirect('projectToday')
 
@@ -58,7 +56,6 @@ def new_review(request):
         form = NewReviewForm(request.POST, request.FILES)
         if form.is_valid():
             review = form.save(commit=False)
-            review.editor = current_user
             review.save()
         return redirect('projectToday')
 
@@ -85,7 +82,6 @@ def convert_dates(dates):
     day_number = dt.date.weekday(dates)
 
     days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday',"Sunday"]
-
     # Returning the actual day of the week
     day = days[day_number]
     return day
