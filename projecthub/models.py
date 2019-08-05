@@ -1,7 +1,7 @@
 from django.db import models
 import datetime as dt
 
-# Create your models here.
+# Create  models here.
 class Project(models.Model):
     project_title = models.CharField(max_length =60)
     project_details = models.CharField(max_length =60)
