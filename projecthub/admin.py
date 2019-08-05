@@ -6,4 +6,4 @@ class ProjectAdmin(admin.ModelAdmin):
     
 admin.site.register(Project,ProjectAdmin)
 
-# Register your models here.
+# Register models here.
