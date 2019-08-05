@@ -5,6 +5,7 @@ $(document).ready(function() {
     var active3 = false;
     var active4 = false;
 
+
     $('.parent2').on('mousedown touchstart', function() {
 
         if (!active1) $(this).find('.test1').css({ 'background-color': 'gray', 'transform': 'translate(0px,125px)' });
