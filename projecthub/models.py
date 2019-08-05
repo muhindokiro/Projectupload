@@ -28,4 +28,9 @@ class Review(models.Model):
     project_review = models.CharField(max_length =60)
 
     def save_review(self):
-        models.session.add(self)
+        self.save()
+
+    @classmethod
+    def todays_projecthub(cls):
+        projecthub = cls.objects.filter()
+        return projecthub

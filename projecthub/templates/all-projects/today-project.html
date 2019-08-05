@@ -3,14 +3,14 @@
 
 {% block content %}
 {{block.super}}
-<div class='container' style='margin-left: 20%'> 
+<div class='container' style='margin-left: 30%'> 
 
   <!-- Looping through ig   -->
   {% for projecthub_item in projecthub %}
 <div class="container-fluid">
  <div class="row">
   <div class="">
-            <div class="card ml-4 mt-4" style="width: 40rem; height: 48rem;">
+            <div class="card ml-4 mt-4" style="width: 40rem; height: 58rem;">
                 <div>
                 <br>
                 <p style="font-size:18px; text-align:center;"><b>{{ projecthub_item.project_title }}</b></p>
@@ -26,9 +26,10 @@
           <p style="font-size:15px;"><b>{{ projecthub_item.project_details }}</b></p>
                 <p style="font-size:15px;"><b>Posted {{ projecthub_item.pub_date|timesince }} ago.</b></p>
                 <p style="font-size:15px;"><b>{{ projecthub_item.project_link }}</b></p>
-                <p style="font-size:15px;"><b>{{ projecthub_item.project_review }}</b></p>
-                <button href="{%url 'new-review' %}" type="button" class="btn btn-dark">Review</button>
+                
                 </div>
+                <a href="{%url 'new-review' %}" style='color:black' ><i class="far fa-comments fa-4x"></i></a>
+                <p style="font-size:15px;"><b>{{ projecthub_item.project_review }}</b></p>
           </div>
             </div>
         </div>
