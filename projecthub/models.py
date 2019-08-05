@@ -26,3 +26,6 @@ class Project(models.Model):
 
 class Review(models.Model):
     project_review = models.CharField(max_length =60)
+
+    def save_review(self):
+        models.session.add(self)
