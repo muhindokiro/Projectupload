@@ -19,27 +19,19 @@
                 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-            
-            </div> 
-                 
+            </div>    
         </div>
-        
     </div>
     <div style="font-size:25px;" class="card-body">
           <p style="font-size:15px;"><b>{{ projecthub_item.project_details }}</b></p>
                 <p style="font-size:15px;"><b>Posted {{ projecthub_item.pub_date|timesince }} ago.</b></p>
                 <p style="font-size:15px;"><b>{{ projecthub_item.project_link }}</b></p>
                 <p style="font-size:15px;"><b>{{ projecthub_item.project_review }}</b></p>
-                <button href="{%url 'new-review '%}" type="button" class="btn btn-dark">Review</button>
-                
+                <button href="{%url 'new-review' %}" type="button" class="btn btn-dark">Review</button>
                 </div>
           </div>
-
             </div>
         </div>
-
-        
-      
         </div>
         </div>
 
