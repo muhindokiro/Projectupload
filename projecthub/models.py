@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 import datetime as dt
 
@@ -27,25 +28,15 @@ class Project(models.Model):
 class Review(models.Model):
     project_review = models.CharField(max_length =60)
 
-    def save_review(self):
+    def save_new_review(self):
         self.save()
-
-    @classmethod
-    def todays_projecthub(cls):
-        projecthub = cls.objects.filter()
-        return projecthub
 
 class Profile(models.Model):
     profile_bio = models.CharField(max_length =60)
-    profile_contact = models.CharField(max_length =60)
+    profile_contact = models.IntegerField()
     profile_location = models.CharField(max_length =60)
     pub_date = models.DateTimeField(auto_now_add=True)
     profile_image = models.ImageField(upload_to='profile/', blank=True)
-    
-    @classmethod
-    def todays_project(cls):
-        projecthub = cls.objects.filter()
-        return projecthub
 
-    def save_profile(self):
+    def save_new_profile(self):
         self.save()
