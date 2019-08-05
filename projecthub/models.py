@@ -23,3 +23,6 @@ class Project(models.Model):
     def search_by_project_title(cls,search_term):
         projecthub = cls.objects.filter(project_title__icontains=search_term)
         return projecthub
+
+class Review(models.Model):
+    project_review = models.CharField(max_length =60)
