@@ -1,0 +1,3 @@
+Hello {{name}}
+
+Welcome to the  Projecthub where you can upload your various projects. The application provides a storage platform for user to create accounts and store their various projects.

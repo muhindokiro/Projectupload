@@ -1,0 +1,55 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+  <div style='color:white;' class="parent2">
+  <a class="test1"><i class="fa fa-user fa-2x"></i></a>
+  <a href="{%url 'new-project'%}" class="test2"><i class="fa fa-graduation-cap fa-2x"></i></a>
+  <a class="test3"><i class="fa fa-code fa-2x"></i></a>
+  <a class="test4"><i class="fa fa-envelope-o fa-2x"></i></a>
+  <a class="mask2"><i class="fa fa-home fa-3x"></i></a>
+</div>
+  <!-- Adding a search form  -->
+  <div class='container' style='margin-left: 28%;margin-top: 4%;'>
+      <div class="form-inline  ">
+        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+            <input type="text"  class="form-control" style='height:40px; width:440px;font-size:15px' placeholder="Search Project" name="article">
+              <button class="btn btn-default" type="submit"><i style='height:26px;font-size:25px' class="glyphicon glyphicon-search"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      </div>
+
+
+      
+      {% if user.is_authenticated %}
+            <ul>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                          <span class="caret"></span>
+                      </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a style="font-size:15px; color: black" href="{%url 'projectToday'%}">Home</a>
+                  </li>
+                  <li>
+                    <a style="font-size:15px; color: black" href="{%url 'new-project'%}">Create Post</a>
+                  </li>
+                  <li>
+                    <a style="font-size:15px; color: black" href="/accounts/password/change">Change Password</a>
+                  </li>
+                  <li>
+                    <a style="font-size:15px; color: black" href="/logout">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            {% else %}
+            <li>
+              <a class='btn btn-default' href="/accounts/login">Login</a>
+            </li>
+
+            {% endif %}
+      <!-- search form end -->
+       
+  </div>

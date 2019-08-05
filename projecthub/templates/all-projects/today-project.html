@@ -1,0 +1,48 @@
+{%extends 'all-projects/base.html'%}
+{% load bootstrap3 %}
+
+{% block content %}
+{{block.super}}
+{% comment %} <div class='container' style='margin-left: 20%'> {% endcomment %}
+
+  <!-- Looping through ig   -->
+  {% for projecthub_item in projecthub %}
+<div class="container-fluid">
+ <div class="row">
+  <div class="">
+            <div class="card ml-4 mt-4" style="width: 40rem; height: 45rem;">
+                <div>
+                <br>
+                <p style="font-size:18px; text-align:center;"><b>{{ projecthub_item.project_title }}</b></p>
+                <br>
+                <img class="card-img-top" height="250px"  src="{{projecthub_item.project_image.url}}" alt="Card image cap"></a>
+                <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+            </div> 
+                 
+        </div>
+        
+    </div>
+    <div style="font-size:25px;" class="card-body">
+          <p style="font-size:15px;"><b>{{ projecthub_item.project_details }}</b></p>
+                <p style="font-size:15px;"><b>Posted {{ projecthub_item.pub_date|timesince }} ago.</b></p>
+                <p style="font-size:15px;"><b>{{ projecthub_item.project_link }}</b></p>
+                {% comment %} <p>{{date|date:"l d-F Y"}}</p> {% endcomment %}
+                </div>
+          </div>
+
+            </div>
+        </div>
+
+        
+      
+        </div>
+        </div>
+
+  {% endfor %}
+
+         
+
+{% endblock %}
