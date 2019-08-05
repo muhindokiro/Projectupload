@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import NewProjectForm,NewsLetterForm,RegisterForm
 
 
-# Create your views here.
+# Create views here.
 # @login_required(login_url='/accounts/login/')
 def project_today(request):
     projecthub = Project.todays_project()
@@ -59,7 +59,7 @@ def register(request):
            username = form.cleaned_data.get('username')
            email = form.cleaned_data['email']
            send_welcome_email(username,email)
-           return redirect('all_posts/today_ig.html')
+           return redirect('all_posts/today_project.html')
    else:
        form =RegisterForm()
    return render(request,'registration/registration_form.html',{'form':form})
