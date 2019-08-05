@@ -10,7 +10,6 @@ class NewProjectForm(forms.ModelForm):
         model = Project
         exclude = ['pub_date']
         
-
 class RegisterForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
     email = forms.EmailField(label='Email')
